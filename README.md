@@ -15,12 +15,13 @@
 - lucide-react
 - tailwind-merge
 - tailwind-variants
-- @radix-ui/react-select
 - react-router-dom
-- localforage
-- match-sorter
-- sort-by
 - @tanstack/react-query
+- @radix-ui/react-select
+- @radix-ui/react-dialog
+- react-hook-form
+- zod
+- @hookform/resolvers
 
 ## Rodar
 
