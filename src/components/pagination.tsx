@@ -21,7 +21,6 @@ export function Pagination({ items, page, pages }: PaginationProps) {
   function firstPage() {
     setSearchParams((params) => {
       params.set('page', '1');
-
       return params;
     });
   }
@@ -30,10 +29,8 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     if (page - 1 <= 0) {
       return;
     }
-
     setSearchParams((params) => {
       params.set('page', String(page - 1));
-
       return params;
     });
   }
@@ -42,10 +39,8 @@ export function Pagination({ items, page, pages }: PaginationProps) {
     if (page + 1 > pages) {
       return;
     }
-
     setSearchParams((params) => {
       params.set('page', String(page + 1));
-
       return params;
     });
   }
@@ -53,7 +48,13 @@ export function Pagination({ items, page, pages }: PaginationProps) {
   function lastPage() {
     setSearchParams((params) => {
       params.set('page', String(pages));
+      return params;
+    });
+  }
 
+  function perPage(value: string) {
+    setSearchParams((params) => {
+      params.set('per_page', value);
       return params;
     });
   }
@@ -65,7 +66,7 @@ export function Pagination({ items, page, pages }: PaginationProps) {
         <div className="flex items-center gap-2">
           <span>Rows per page</span>
 
-          <Select defaultValue="10">
+          <Select defaultValue="10" onValueChange={(value) => perPage(value)}>
             <SelectTrigger aria-label="Page" />
             <SelectContent>
               <SelectItem value="10">10</SelectItem>
