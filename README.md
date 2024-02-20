@@ -34,6 +34,10 @@
 - npm run server
 - npm run dev
 
+## Figma Design
+
+- https://www.figma.com/community/file/1341554349314625270
+
 ## Links úteis
 
 - https://vitejs.dev/guide/
