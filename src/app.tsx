@@ -41,7 +41,7 @@ export function App() {
       return data;
     },
     placeholderData: keepPreviousData,
-    staleTime: 1000 * 60 * 60 * 24,
+    staleTime: 1000 * 5,
   });
 
   function onFilter(event: FormEvent<HTMLFormElement>) {
@@ -126,13 +126,13 @@ export function App() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {tagsResponse?.data.map((tag) => (
-              <TableRow key={tag.id}>
+            {tagsResponse?.data.map((tag, index) => (
+              <TableRow key={tag.id ?? index}>
                 <TableCell></TableCell>
                 <TableCell>
                   <div className="flex flex-col">
                     <span className="font-medium">{tag.title}</span>
-                    <span className="text-xs text-zinc-500">{tag.id}</span>
+                    <span className="text-xs text-zinc-500">{tag.slug}</span>
                   </div>
                 </TableCell>
                 <TableCell className="text-zinc-300">
