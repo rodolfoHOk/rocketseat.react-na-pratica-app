@@ -41,7 +41,7 @@ export function App() {
       return data;
     },
     placeholderData: keepPreviousData,
-    staleTime: 1000 * 5,
+    staleTime: 1000 * 60 * 60 * 24, // 1 dia
   });
 
   function onFilter(event: FormEvent<HTMLFormElement>) {
